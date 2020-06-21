@@ -7,7 +7,7 @@ let img;
 
 function setup(){
 	createCanvas(windowWidth,windowHeight);
-	audio = new Audio('assets/guitar.mp3');   					//load the audio file
+	audio = new Audio('assets/####.mp3);   					//load the audio file
 	audio.preload = 'auto';  //this is the default
 	audioContext=new (window.AudioContext || window.webkitAudioContext)({ latencyHint: "interactive"});	//create an audio context
     audioNode = audioContext.createMediaElementSource(audio);   //create an audio node from the audio file
