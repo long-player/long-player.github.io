@@ -12,5 +12,5 @@ It's been made with:
 
 **Audacity (for the audio editing) [Donate](https://www.audacityteam.org/donate/)**
 
-**extensive use of freesound.com (for various audio samples) [Donate](https://freesound.org/donations/donate/)**
+**Extensive use of Freesound.com (for various audio samples) [Donate](https://freesound.org/donations/donate/)**
 
