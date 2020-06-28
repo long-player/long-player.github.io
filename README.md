@@ -14,6 +14,3 @@ It's been made with:
 
 **extensive use of freesound.com (for various audio samples) [Donate](https://freesound.org/donations/donate/)**
 
-
-These are all free projects - please consider donating money or time to them.
-
