@@ -2,13 +2,12 @@
 
 //You won't find any help for the puzzle in here! 
 //but maybe fix my inefficient code while you're looking around?
-//or download the original file below
 
 var tapePlayer;
 var inited=false;
 
 //accessing the soundcloud api where the file is hosted
-//this will probably break if this client_id is ever revoked. podbean may be a solution
+//this will probably break if this client_id is ever revoked.
 //if you can host a large mp3, let me know!
 var fileLocation="https://api.soundcloud.com/tracks/848081410/stream?client_id=17a992358db64d99e492326797fff3e8";
 var assetsLocation="assets/";

@@ -75,14 +75,14 @@ class Player{
 		this.go=loadImage(assetsLocation + "go.png");
 
 		this.buttons=[
-			new ImageButton(this.posX+this.width*0.1,this.posY+height*.825,this.width*0.1,this.height*.1,this.rw10,this.cueDiff.bind(this,-10)),
-			new ImageButton(this.posX+this.width*0.2125,this.posY+height*.825,this.width*0.1,this.height*.1,this.play,this.togglePlayPause.bind(this)),
-			new ImageButton(this.posX+this.width*0.325,this.posY+height*.825,this.width*0.1,this.height*.1,this.ff10,this.cueDiff.bind(this,10)),
-			new ImageButton(this.posX+this.width*0.8,this.posY+height*.825,this.width*0.1,this.height*.1,this.go,this.cueToTarget.bind(this)),
-			new ImageButton(this.posX+this.width*0.575,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,3,1)),
-			new ImageButton(this.posX+this.width*0.625,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,2,1)),
-			new ImageButton(this.posX+this.width*0.675,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,1,1)),
-			new ImageButton(this.posX+this.width*0.725,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,0,1))
+			new ImageButton(this.posX+this.width*0.1,	this.posY+height*.825,	this.width*0.1,	this.height*.1,	this.rw10,	this.cueDiff.bind(this,-10)),
+			new ImageButton(this.posX+this.width*0.2125,this.posY+height*.825,	this.width*0.1,	this.height*.1,	this.play,	this.togglePlayPause.bind(this)),
+			new ImageButton(this.posX+this.width*0.325,	this.posY+height*.825,	this.width*0.1,	this.height*.1,	this.ff10,	this.cueDiff.bind(this,10)),
+			new ImageButton(this.posX+this.width*0.8,	this.posY+height*.825,	this.width*0.1,	this.height*.1,	this.go,	this.cueToTarget.bind(this)),
+			new ImageButton(this.posX+this.width*0.575,	this.posY+height*.89,	this.width*0.05,this.height*.05,this.plus,	this.addToTargetDigit.bind(this,3,1)),
+			new ImageButton(this.posX+this.width*0.625,	this.posY+height*.89,	this.width*0.05,this.height*.05,this.plus,	this.addToTargetDigit.bind(this,2,1)),
+			new ImageButton(this.posX+this.width*0.675,	this.posY+height*.89,	this.width*0.05,this.height*.05,this.plus,	this.addToTargetDigit.bind(this,1,1)),
+			new ImageButton(this.posX+this.width*0.725,	this.posY+height*.89,	this.width*0.05,this.height*.05,this.plus,	this.addToTargetDigit.bind(this,0,1))
 		];
 
 
@@ -119,12 +119,6 @@ class Player{
     		this.counter.draw(this.audio.currentTime);
     		this.target.draw(this.targetTime);
     	}
-
-    	// //some test text (not in use)
-    	// fill(0);
-    	// noStroke();
-    	// textFont("courier");
-    	// text("hello!",600,600)
 
     	this.spectrum.draw(!this.audio.paused);
     	this.waveform.draw(!this.audio.paused);
