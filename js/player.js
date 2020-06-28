@@ -205,6 +205,7 @@ class Player{
     }
 }
 
+
 class Spectrum{
 	constructor(analyserNode,x,y,width,height){
 		this.analyser=analyserNode;	
@@ -237,6 +238,7 @@ class Spectrum{
 		image(this.offscreen,this.x,this.y,this.width,this.height);
 	}
 }
+
 
 class Waveform{
 	constructor(analyserNode,x,y,width,height){
@@ -271,6 +273,7 @@ class Waveform{
 		image(this.offscreen,this.x,this.y,this.width,this.height);
 	}
 }
+
 
 class MechanicalCounter{
 	//displayStrip = an image representing the numbers on the counter. should be 11 "units" tall, and contain the digits 0,1,2,3....9,0
@@ -309,6 +312,7 @@ class MechanicalCounter{
 		}
 	}
 }
+
 
 class TapeSystem{
 	constructor(){  
@@ -359,6 +363,7 @@ class TapeSystem{
 	}
 }
 
+
 class TapeConnection{
 	constructor(wheels){  //pass an array of wheels to make a tape connection between
 		this.wheels=[]; 
@@ -381,6 +386,7 @@ class TapeConnection{
   		}
 	}
 }
+
 
 class Wheel{
 	constructor(x,y,radius){
@@ -406,6 +412,7 @@ class Wheel{
 		}
 	}
 }
+
 
 class ImageButton{
 	constructor(x,y,width,height,img,pressMethod,releaseMethod){
