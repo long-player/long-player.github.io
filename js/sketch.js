@@ -27,8 +27,8 @@ function draw(){
 		textSize(height*.04)
 		fill(255);
 		text("Follow the clues.",width*.5,height*.3);
-		text("Keep a record of any numbers and letters you find.",width*.5,height*.4);
-		text("You may need them again.",width*.5,height*.5);
+		text("Keep a record of any numbers and letters you find,",width*.5,height*.4);
+		text("you may need them again.",width*.5,height*.5);
 		text("You may wish to time yourself.",width*.5,height*.6);
 		text("Click anywhere to start.",width*.5,height*.7);
 	}
