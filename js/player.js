@@ -51,11 +51,11 @@ class Player{
 
     	//create two mechanical counter objects for current and target position
     	this.counter= new MechanicalCounter(counterStrip,4,posX+width*.4,posY+height*.17,width*.2,height*.06);
-    	this.target=new MechanicalCounter(counterStrip,4,posX+width*.575,posY+height*.810,width*.2,height*.06);
+    	this.target=new MechanicalCounter(counterStrip,4,posX+width*.575,posY+height*.82,width*.2,height*.06);
 
     	//create a spectrum and waveform canvas that will read data from the analyser node
-    	this.spectrum=new Spectrum(this.analyser,posX+width*.05,posY+height*.55,width*.425,height*.2);				//set up our spectrum and waveform viewers
-		this.waveform=new Waveform(this.analyser,posX+width*.525,posY+height*.55,width*.425,height*.2);
+    	this.spectrum=new Spectrum(this.analyser,posX+width*.05,posY+height*.55,width*.425,height*.225);				//set up our spectrum and waveform viewers
+		this.waveform=new Waveform(this.analyser,posX+width*.525,posY+height*.55,width*.425,height*.225);
 
 		//some other variables for managing rewinding
     	this.rewinding=false;
@@ -75,14 +75,14 @@ class Player{
 		this.go=loadImage(assetsLocation + "go.png");
 
 		this.buttons=[
-			new ImageButton(this.posX+this.width*0.1,this.posY+height*.8,this.width*0.1,this.height*.1,this.rw10,this.cueDiff.bind(this,-10)),
-			new ImageButton(this.posX+this.width*0.2125,this.posY+height*.8,this.width*0.1,this.height*.1,this.play,this.togglePlayPause.bind(this)),
-			new ImageButton(this.posX+this.width*0.325,this.posY+height*.8,this.width*0.1,this.height*.1,this.ff10,this.cueDiff.bind(this,10)),
-			new ImageButton(this.posX+this.width*0.8,this.posY+height*.8,this.width*0.1,this.height*.1,this.go,this.cueToTarget.bind(this)),
-			new ImageButton(this.posX+this.width*0.575,this.posY+height*.88,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,3,1)),
-			new ImageButton(this.posX+this.width*0.625,this.posY+height*.88,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,2,1)),
-			new ImageButton(this.posX+this.width*0.675,this.posY+height*.88,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,1,1)),
-			new ImageButton(this.posX+this.width*0.725,this.posY+height*.88,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,0,1))
+			new ImageButton(this.posX+this.width*0.1,this.posY+height*.825,this.width*0.1,this.height*.1,this.rw10,this.cueDiff.bind(this,-10)),
+			new ImageButton(this.posX+this.width*0.2125,this.posY+height*.825,this.width*0.1,this.height*.1,this.play,this.togglePlayPause.bind(this)),
+			new ImageButton(this.posX+this.width*0.325,this.posY+height*.825,this.width*0.1,this.height*.1,this.ff10,this.cueDiff.bind(this,10)),
+			new ImageButton(this.posX+this.width*0.8,this.posY+height*.825,this.width*0.1,this.height*.1,this.go,this.cueToTarget.bind(this)),
+			new ImageButton(this.posX+this.width*0.575,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,3,1)),
+			new ImageButton(this.posX+this.width*0.625,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,2,1)),
+			new ImageButton(this.posX+this.width*0.675,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,1,1)),
+			new ImageButton(this.posX+this.width*0.725,this.posY+height*.89,this.width*0.05,this.height*.05,this.plus,this.addToTargetDigit.bind(this,0,1))
 		];
 
 
@@ -93,6 +93,9 @@ class Player{
     	fill(240,235,200);
     	noStroke();
     	rect(this.posX,this.posY,this.width,this.height,this.width*.1);
+    	stroke(0);
+    	noFill();
+    	rect(this.posX+this.width*0.01, this.posY+this.height*0.01, this.width*0.98, this.height*0.98, this.width*.09);
 
     	//some rewinding stuff
     	let timeRatio=this.audio.currentTime/9999;  //whole animation won't work if this isn't a constant...?
