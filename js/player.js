@@ -215,7 +215,7 @@ class Spectrum{
 		this.width=width;
 		this.height=height;
 		this.divider=1;
-		this.offscreen=createGraphics(this.bins.length/this.divider,this.bins.length/this.divider,P2D);
+		this.offscreen=createGraphics(this.bins.length/this.divider/2,this.bins.length/this.divider,P2D);
 		this.offscreen.background(0);
 		this.offscreen.strokeWeight(1);
 	}
@@ -225,11 +225,11 @@ class Spectrum{
 		stroke(50);
 		strokeWeight(1);
 		rect(this.x-2,this.y-2,this.width+3,this.height+3,2); //outline rectangle
-
 		if(update){		
-			console.log("af");
 			this.analyser.getByteFrequencyData(this.bins);
-			this.offscreen.image(this.offscreen.get(1,0,this.bins.length-1,this.bins.length),0,0);
+			this.offscreen.image(this.offscreen.get(),-1,0);
+			this.offscreen.copy(this.offscreen.get(),1,0,this.offscreen.width-1,this.offscreen.height,0,0,this.offscreen.width-1,this.offscreen.height);
+			//this.slideImage(); //this function replaces the commented line above
 			for(let i=0;i<this.offscreen.height;i++){
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);
@@ -237,6 +237,14 @@ class Spectrum{
 		}
 
 		image(this.offscreen.get(),this.x,this.y,this.width,this.height);
+	}
+
+	slideImage(){
+		this.offscreen.loadPixels();
+		for(let i=0;i<this.offscreen.pixels.length-4;i++){
+			this.offscreen.pixels[i]=this.offscreen.pixels[i+4];
+		}
+		this.offscreen.updatePixels();
 	}
 }
 
