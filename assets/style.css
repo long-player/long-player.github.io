@@ -1,7 +1,6 @@
 body{
 	background-color:black;
-}
-
-.center {
-  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }

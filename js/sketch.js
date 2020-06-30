@@ -13,8 +13,7 @@ var fileLocation="https://api.soundcloud.com/tracks/848081410/stream?client_id=1
 var assetsLocation="assets/";
 
 function setup(){
-	let canvas=createCanvas(500,500);
-	canvas.parent("sketch");
+	createCanvas(500,500);
 }
 
 function draw(){
