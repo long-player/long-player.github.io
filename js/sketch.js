@@ -51,6 +51,14 @@ function mousePressed() {
   	}
 }
 
+function touchStarted() {
+	if(inited){
+		tapePlayer.mousePressed();	
+	}else{
+		initAudio();
+  	}
+}
+
 function initAudio(){
 	tapePlayer.audioContext.resume();
 	inited=true;
