@@ -57,6 +57,7 @@ function touchStarted() {
 	}else{
 		initAudio();
   	}
+  	return false;
 }
 
 function initAudio(){
