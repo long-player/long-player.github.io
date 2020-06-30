@@ -216,6 +216,7 @@ class Spectrum{
 		this.height=height;
 		this.divider=1;
 		this.offscreen=createGraphics(this.bins.length/this.divider,this.bins.length/this.divider,P2D);
+		console.log(this.offscreen);
 		this.offscreen.background(0);
 		this.offscreen.strokeWeight(1);
 	}
@@ -249,7 +250,7 @@ class Waveform{
 		this.width=width;
 		this.height=height;
 		this.divider=1;
-		this.offscreen=createGraphics(this.bins.length/this.divider,256,P2D)
+		this.offscreen=createGraphics(this.bins.length/this.divider,256,P2D);
 		this.offscreen.background(0);
 	}
 
