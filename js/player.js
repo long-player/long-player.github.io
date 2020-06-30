@@ -216,7 +216,6 @@ class Spectrum{
 		this.height=height;
 		this.divider=1;
 		this.offscreen=createGraphics(this.bins.length/this.divider,this.bins.length/this.divider,P2D);
-		console.log(this.offscreen);
 		this.offscreen.background(0);
 		this.offscreen.strokeWeight(1);
 	}
@@ -229,7 +228,7 @@ class Spectrum{
 
 		if(update){		
 			this.analyser.getByteFrequencyData(this.bins);
-			this.offscreen.image(this.offscreen.get(),-1,0 );
+			this.offscreen.image(this.offscreen.get(1,0,this.bins.length-1,this.bins.length),0,0);
 			for(let i=0;i<this.offscreen.height;i++){
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);
