@@ -209,7 +209,6 @@ class Player{
 class Spectrum{
 	constructor(analyserNode,x,y,width,height){
 		this.analyser=analyserNode;	
-		console.log(analyserNode);
 		this.bins=new Uint8Array(this.analyser.frequencyBinCount);		//shorten fft
 		this.x=x;
 		this.y=y;
