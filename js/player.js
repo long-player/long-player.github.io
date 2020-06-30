@@ -215,7 +215,7 @@ class Spectrum{
 		this.width=width;
 		this.height=height;
 		this.divider=1;
-		this.offscreen=createGraphics(this.bins.length/this.divider,this.bins.length/this.divider)
+		this.offscreen=createGraphics(this.bins.length/this.divider,this.bins.length/this.divider);
 		this.offscreen.background(0);
 		this.offscreen.strokeWeight(1);
 	}

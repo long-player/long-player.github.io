@@ -13,7 +13,8 @@ var fileLocation="https://api.soundcloud.com/tracks/848081410/stream?client_id=1
 var assetsLocation="assets/";
 
 function setup(){
-	createCanvas(windowWidth,windowHeight);
+	let canvas=createCanvas(500,500);
+	canvas.parent("sketch");
 }
 
 function draw(){
@@ -26,7 +27,7 @@ function draw(){
 		textSize(height*.04)
 		fill(255);
 		text("Follow the clues.",width*.5,height*.3);
-		text("Keep a record of any numbers and letters you find,",width*.5,height*.4);
+		text("Note any numbers and letters you find,",width*.5,height*.4);
 		text("you may need them again.",width*.5,height*.5);
 		text("You may wish to time yourself.",width*.5,height*.6);
 		text("Click anywhere to start.",width*.5,height*.7);
@@ -51,6 +52,6 @@ function mousePressed() {
 }
 
 function initAudio(){
-	tapePlayer=new Player(10,10,520,520,fileLocation,assetsLocation);  //create this object on user gesture
+	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //create this object on user gesture
 	inited=true;
 }
