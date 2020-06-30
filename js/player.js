@@ -19,6 +19,7 @@ class Player{
 
 		//create an audiocontext for an analyser node. gain node is final routing point for adjusting volume
 		this.audioContext=new (window.AudioContext || window.webkitAudioContext)({sampleRate: 44100, latencyHint: "playback"});	//samplerate should be the same as original file
+    	this.audioContext.suspend();
     	this.audioNode = this.audioContext.createMediaElementSource(this.audio);  
     	this.gain=this.audioContext.createGain();
 
@@ -209,7 +210,7 @@ class Player{
 class Spectrum{
 	constructor(analyserNode,x,y,width,height){
 		this.analyser=analyserNode;	
-		this.bins=new Uint8Array(this.analyser.frequencyBinCount);		//shorten fft
+		this.bins=new Uint8Array(this.analyser.frequencyBinCount);		//faster fft if byte
 		this.x=x;
 		this.y=y;
 		this.width=width;
@@ -228,7 +229,7 @@ class Spectrum{
 		if(update){		
 			this.analyser.getByteFrequencyData(this.bins);
 			//this.offscreen.image(this.offscreen.get(),-1,0);  //behaves differently on different hardware(?!) - https://stackoverflow.com/questions/23497925/how-can-i-stop-the-alpha-premultiplication-with-canvas-imagedata
-			this.slideImage();
+			this.slideImage();  //using this instead
 			for(let i=0;i<this.offscreen.height;i++){
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);

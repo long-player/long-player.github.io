@@ -14,6 +14,7 @@ var assetsLocation="assets/";
 
 function setup(){ 
 	createCanvas(500,500);
+	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //create this object on user gesture
 }
 
 function draw(){
@@ -51,6 +52,6 @@ function mousePressed() {
 }
 
 function initAudio(){
-	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //create this object on user gesture
+	tapePlayer.audioContext.resume();
 	inited=true;
 }
