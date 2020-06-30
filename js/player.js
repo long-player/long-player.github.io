@@ -1,4 +1,3 @@
-
 class Player{
 	//this is the main object we see on the canvas, initialised with a position, size, and filename
 	constructor(posX,posY,width,height,audioFileName,assetsLocation){
@@ -27,6 +26,7 @@ class Player{
     	this.analyser = this.audioContext.createAnalyser();					
 		this.analyser.smoothingTimeConstant = 0;						
 		this.analyser.fftSize=1024;		
+		this.analyser.minDecibels=-90;
 		
 		//connect audioNode->analyserNode & audioNode->gain->output
     	this.audioNode.connect(this.analyser);								
@@ -234,11 +234,10 @@ class Spectrum{
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);
 			}
-			console.log("spectrum update called ok");
+			console.log(this.bins[0],this.bins[1]);
 		}
 
 		image(this.offscreen.get(),this.x,this.y,this.width,this.height);
-		console.log("spectrum draw called ok");
 	}
 }
 
