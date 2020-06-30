@@ -13,7 +13,8 @@ var fileLocation="https://api.soundcloud.com/tracks/848081410/stream?client_id=1
 var assetsLocation="assets/";
 
 function setup(){ 
-	createCanvas(500,500);
+	let canvas=createCanvas(500,500);
+	canvas.parent("flex");
 	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //create this object on user gesture
 }
 
@@ -44,7 +45,6 @@ function keyPressed(){
 
 function mousePressed() {
   	if(inited){
-  		//tapePlayer.targetTime=9999*mouseX/width; //useful for debugging!
 		tapePlayer.mousePressed();	
 	}else{
 		initAudio();
