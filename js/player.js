@@ -228,7 +228,6 @@ class Spectrum{
 		if(update){		
 			this.analyser.getByteFrequencyData(this.bins);
 			//this.offscreen.image(this.offscreen.get(),-1,0);  //behaves differently on different hardware(?!) - https://stackoverflow.com/questions/23497925/how-can-i-stop-the-alpha-premultiplication-with-canvas-imagedata
-			//this.offscreen.copy(this.offscreen.get(),1,0,this.offscreen.width-1,this.offscreen.height,0,0,this.offscreen.width-1,this.offscreen.height);
 			this.slideImage();
 			for(let i=0;i<this.offscreen.height;i++){
 				this.offscreen.stroke(this.bins[i*this.divider]);
