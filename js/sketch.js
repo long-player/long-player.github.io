@@ -12,7 +12,7 @@ var inited=false;
 var fileLocation="https://api.soundcloud.com/tracks/848081410/stream?client_id=17a992358db64d99e492326797fff3e8";
 var assetsLocation="assets/";
 
-function setup(){
+function setup(){ 
 	createCanvas(500,500);
 }
 

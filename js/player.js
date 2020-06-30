@@ -214,8 +214,8 @@ class Spectrum{
 		this.y=y;
 		this.width=width;
 		this.height=height;
-		this.divider=1;
-		this.offscreen=createGraphics(this.bins.length/this.divider,this.bins.length/this.divider,P2D);
+		this.divider=8;
+		this.offscreen=createGraphics(this.bins.length,this.bins.length/this.divider);
 		this.offscreen.background(0);
 		this.offscreen.strokeWeight(1);
 	}
@@ -227,10 +227,9 @@ class Spectrum{
 		rect(this.x-2,this.y-2,this.width+3,this.height+3,2); //outline rectangle
 		if(update){		
 			this.analyser.getByteFrequencyData(this.bins);
-			this.offscreen.image(this.offscreen.get(),-1,0);  //behaves differently on different hardware(?!) - may be due to data loss: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData
+			//this.offscreen.image(this.offscreen.get(),-1,0);  //behaves differently on different hardware(?!) - https://stackoverflow.com/questions/23497925/how-can-i-stop-the-alpha-premultiplication-with-canvas-imagedata
 			//this.offscreen.copy(this.offscreen.get(),1,0,this.offscreen.width-1,this.offscreen.height,0,0,this.offscreen.width-1,this.offscreen.height);
-			//this.slideImage();
-			this.fixAlpha();
+			this.slideImage();
 			for(let i=0;i<this.offscreen.height;i++){
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);
@@ -244,14 +243,6 @@ class Spectrum{
 		this.offscreen.loadPixels();
 		for(let i=0;i<this.offscreen.pixels.length-4;i++){
 			this.offscreen.pixels[i]=this.offscreen.pixels[i+4];
-		}
-		this.offscreen.updatePixels();
-	}
-
-	fixAlpha(){
-		this.offscreen.loadPixels();
-		for(let i=3;i<this.offscreen.pixels.length;i+=4){
-			this.offscreen.pixels[i]=255;
 		}
 		this.offscreen.updatePixels();
 	}
