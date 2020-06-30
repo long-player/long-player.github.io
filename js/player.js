@@ -229,12 +229,11 @@ class Spectrum{
 
 		if(update){		
 			this.analyser.getByteFrequencyData(this.bins);
-			this.offscreen.image(this.offscreen,-1,0 );
+			this.offscreen.image(this.offscreen.get(),-1,0 );
 			for(let i=0;i<this.offscreen.height;i++){
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);
 			}
-			console.log(this.bins[0],this.bins[1]);
 		}
 
 		image(this.offscreen.get(),this.x,this.y,this.width,this.height);
