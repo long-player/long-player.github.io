@@ -15,3 +15,4 @@ It's been made with:
 
 **MP3 hosted by SoundCloud**
 
+All audio samples are CC0 (public domain).
