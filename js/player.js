@@ -227,6 +227,7 @@ class Spectrum{
 		rect(this.x-2,this.y-2,this.width+3,this.height+3,2); //outline rectangle
 
 		if(update){		
+			console.log("af");
 			this.analyser.getByteFrequencyData(this.bins);
 			this.offscreen.image(this.offscreen.get(1,0,this.bins.length-1,this.bins.length),0,0);
 			for(let i=0;i<this.offscreen.height;i++){
