@@ -233,6 +233,7 @@ class Spectrum{
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);
 			}
+			console.log(frameRate());
 		}
 
 		image(this.offscreen.get(),this.x,this.y,this.width,this.height);
