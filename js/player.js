@@ -235,7 +235,7 @@ class Spectrum{
 			}
 		}
 
-		image(this.offscreen,this.x,this.y,this.width,this.height);
+		image(this.offscreen.get(),this.x,this.y,this.width,this.height);
 	}
 }
 
@@ -270,7 +270,7 @@ class Waveform{
 			}
 		}
 
-		image(this.offscreen,this.x,this.y,this.width,this.height);
+		image(this.offscreen.get(),this.x,this.y,this.width,this.height);
 	}
 }
 
