@@ -43,10 +43,20 @@ function keyPressed(){
   	}
 }
 
+var released = true;
 
+function mouseReleased(){
+	released = true;
+	return false;
+}
 
 function mousePressed() {
-	if (event.type != 'touchstart') return true
+	//if (event.type != 'touchstart') return true  fixes on mobile, not on PC
+	if(!released){
+		return;
+	}
+	released = false;
+
 
   	if(inited){
 		tapePlayer.mousePressed();	
