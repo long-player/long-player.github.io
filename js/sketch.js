@@ -39,7 +39,7 @@ function keyPressed(){
 	if(inited){
 		tapePlayer.keyPressed();
 	}else{
-	tapePlayer.audioContext.resume();
+		initAudio();
   	}
   	return false;
 }
@@ -48,7 +48,7 @@ function mousePressed() {
   	if(inited){
 		tapePlayer.mousePressed();	
 	}else{
-	tapePlayer.audioContext.resume();
+		initAudio();
   	}
   	return false;
 }
@@ -61,9 +61,11 @@ function touchEnded() {
   	return false;
 }
 
+
+
 function initAudio(){
 	tapePlayer.audioContext.resume();
-	if(tapePlayer.audioContext.state=="running"){
+	if(tapePlayer.audioContext.state.toString()==="running"){
 		inited=true;
 	}
 }
