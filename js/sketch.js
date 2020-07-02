@@ -60,10 +60,6 @@ function touchEnded() {
   	}
 }
 
-// function touchEnded() {
-//   	return false;
-// }
-
 function initAudio(){
 	tapePlayer.audioContext.resume();
 	if(tapePlayer.audioContext.state==="running"){
