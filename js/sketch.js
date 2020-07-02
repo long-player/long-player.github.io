@@ -43,19 +43,11 @@ function keyPressed(){
   	}
 }
 
-var released = true;
 
-function mouseReleased(){
-	released = true;
-	return false;
-}
 
 function mousePressed() {
-	if(!released){
-		return;
-	}
-	released = false;
-	
+	if (event.type != 'touchstart') return true
+
   	if(inited){
 		tapePlayer.mousePressed();	
 	}else{
