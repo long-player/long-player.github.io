@@ -49,11 +49,10 @@ function mousePressed() {
 	}else{
 		initAudio();
   	}
-  	return false;
 }
 
 
-function touchStarted() {
+function touchEnded() {
   	if(inited){
 		tapePlayer.mousePressed();	
 	}else{
