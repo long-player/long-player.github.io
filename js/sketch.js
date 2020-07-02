@@ -49,6 +49,7 @@ function mousePressed() {
 	}else{
 		initAudio();
   	}
+  	return false;
 }
 
 
