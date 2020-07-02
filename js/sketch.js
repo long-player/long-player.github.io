@@ -15,7 +15,7 @@ var assetsLocation="assets/";
 function setup(){ 
 	let canvas=createCanvas(500,500);
 	canvas.parent("flex");
-	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //create this object on user gesture
+	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //create this object on user gesture, starts with audioContext suspended
 }
 
 function draw(){
@@ -36,31 +36,28 @@ function draw(){
 }
 
 function keyPressed(){
-	if(inited){
+	if(tapePlayer.audioContext.state=="running"){
 		tapePlayer.keyPressed();
 	}else{
-		initAudio();
-  	}
-}
-
-function mousePressed() {
-  	if(inited){
-		tapePlayer.mousePressed();	
-	}else{
-		initAudio();
-  	}
-}
-
-function touchStarted() {
-	if(inited){
-		tapePlayer.mousePressed();	
-	}else{
-		initAudio();
+		tapePlayer.audioContext.resume();
   	}
   	return false;
 }
 
-function initAudio(){
-	tapePlayer.audioContext.resume();
-	inited=true;
+function mousePressed() {
+  	if(tapePlayer.audioContext.state=="running"){
+		tapePlayer.mousePressed();	
+	}else{
+		tapePlayer.audioContext.resume();
+  	}
+  	return false;
 }
+
+function touchStarted() {
+  	return false;
+}
+
+function touchEnded() {
+  	return false;
+}
+
