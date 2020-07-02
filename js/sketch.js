@@ -36,19 +36,19 @@ function draw(){
 }
 
 function keyPressed(){
-	if(tapePlayer.audioContext.state=="running"){
+	if(inited){
 		tapePlayer.keyPressed();
 	}else{
-		tapePlayer.audioContext.resume();
+	tapePlayer.audioContext.resume();
   	}
   	return false;
 }
 
 function mousePressed() {
-  	if(tapePlayer.audioContext.state=="running"){
+  	if(inited){
 		tapePlayer.mousePressed();	
 	}else{
-		tapePlayer.audioContext.resume();
+	tapePlayer.audioContext.resume();
   	}
   	return false;
 }
@@ -61,3 +61,9 @@ function touchEnded() {
   	return false;
 }
 
+function initAudio(){
+	tapePlayer.audioContext.resume();
+	if(tapePlayer.audioContext.state=="running"){
+		inited=true;
+	}
+}
