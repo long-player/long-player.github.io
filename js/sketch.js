@@ -53,19 +53,17 @@ function mousePressed() {
   	return false;
 }
 
-function touchStarted() {
-  	return false;
-}
+// function touchStarted() {
+//   	return false;
+// }
 
-function touchEnded() {
-  	return false;
-}
-
-
+// function touchEnded() {
+//   	return false;
+// }
 
 function initAudio(){
 	tapePlayer.audioContext.resume();
-	if(tapePlayer.audioContext.state.toString()==="running"){
+	if(tapePlayer.audioContext.state==="running"){
 		inited=true;
 	}
 }
