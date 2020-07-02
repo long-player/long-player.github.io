@@ -54,9 +54,14 @@ function mousePressed() {
 }
 
 
-// function touchStarted() {
-//   	return false;
-// }
+function touchStarted() {
+  	if(inited){
+		tapePlayer.mousePressed();	
+	}else{
+		initAudio();
+  	}
+  	return false;
+}
 
 // function touchEnded() {
 //   	return false;
