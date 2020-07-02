@@ -228,8 +228,8 @@ class Spectrum{
 		rect(this.x-2,this.y-2,this.width+3,this.height+3,2); //outline rectangle
 		if(update){		
 			this.analyser.getByteFrequencyData(this.bins);
-			//this.offscreen.image(this.offscreen.get(),-1,0);  //behaves differently on different hardware(?!) - https://stackoverflow.com/questions/23497925/how-can-i-stop-the-alpha-premultiplication-with-canvas-imagedata
-			this.slideImage();  //using this instead
+			this.offscreen.image(this.offscreen.get(),-1,0);  //behaves differently on different hardware(?!) - https://stackoverflow.com/questions/23497925/how-can-i-stop-the-alpha-premultiplication-with-canvas-imagedata
+			//this.slideImage();  //using this instead
 			for(let i=0;i<this.offscreen.height;i++){
 				this.offscreen.stroke(this.bins[i*this.divider]);
 				this.offscreen.point(this.offscreen.width-1 ,this.offscreen.height-i);
