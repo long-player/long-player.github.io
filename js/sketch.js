@@ -41,7 +41,6 @@ function keyPressed(){
 	}else{
 		initAudio();
   	}
-  	return false;
 }
 
 function mousePressed() {
@@ -50,7 +49,6 @@ function mousePressed() {
 	}else{
 		initAudio();
   	}
-  	return false;
 }
 
 
@@ -60,7 +58,6 @@ function touchStarted() {
 	}else{
 		initAudio();
   	}
-  	return false;
 }
 
 // function touchEnded() {
