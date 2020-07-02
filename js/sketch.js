@@ -43,19 +43,24 @@ function keyPressed(){
   	}
 }
 
+var released = true;
+
+function mouseReleased(){
+	released = true;
+	return false;
+}
+
 function mousePressed() {
+	if(!released){
+		return;
+	}
+	released = false;
+	
   	if(inited){
 		tapePlayer.mousePressed();	
 	}else{
 		initAudio();
   	}
-}
-
-function touchStarted(){
-	return false;
-}
-function touchEnded(){
-	return false;
 }
 
 function initAudio(){
