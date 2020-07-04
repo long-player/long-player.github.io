@@ -1,5 +1,5 @@
 class Player{
-	//this is the main object we see on the canvas, initialised with a position, size, and filename
+	//this is the main object we see on the canvas, initialised with a position, size, streaming audio location and assets location
 	constructor(posX,posY,width,height,audioFileName,assetsLocation){
 
 		this.posX=posX;
@@ -26,7 +26,7 @@ class Player{
     	//create an analyser node
     	this.analyser = this.audioContext.createAnalyser();					
 		this.analyser.smoothingTimeConstant = 0;						
-		this.analyser.fftSize=1024;		
+		this.analyser.fftSize=1024;		  //need to rework audio for faster (smaller) FFT size
 		this.analyser.minDecibels=-90;
 		
 		//connect audioNode->analyserNode & audioNode->gain->output
@@ -68,6 +68,7 @@ class Player{
 
     	//images (note & button graphics)
 		this.stickyNote=loadImage(assetsLocation + "note.png");
+    	this.reelCover=loadImage(assetsLocation + "reel.png");
 
 		this.play=loadImage(assetsLocation + "play.png");
 		this.ff10=loadImage(assetsLocation + "ff10.png");
@@ -124,6 +125,12 @@ class Player{
     	this.spectrum.draw(!this.audio.paused);
     	this.waveform.draw(!this.audio.paused);
 
+    	stroke(0);
+    	strokeWeight(1);
+    	fill(200);
+    	ellipse(this.reel1.x,this.reel1.y,this.width*.375,this.width*.375);
+    	ellipse(this.reel2.x,this.reel2.y,this.width*.375,this.width*.375);
+
     	this.t.draw(timeRatio);
 
     	noStroke();
@@ -132,12 +139,12 @@ class Player{
 
 		this.buttons.forEach(element => element.draw());
 
+
     	push();
 		translate(this.posX+this.width*.45,this.posY);
 		rotate(0.1);
 		image(this.stickyNote,0,0,this.width*.15,this.width*.15);
 		pop();
-
     }
 
     togglePlayPause(){

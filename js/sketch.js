@@ -9,13 +9,13 @@ var inited=false;
 //accessing the soundcloud api where the file is hosted
 //this will probably break if this client_id is ever revoked.
 //if you can host a large mp3, let me know!
-var fileLocation="https://api.soundcloud.com/tracks/848081410/stream?client_id=17a992358db64d99e492326797fff3e8";
+var fileLocation="https://api.soundcloud.com/tracks/852098338/stream?client_id=17a992358db64d99e492326797fff3e8";
 var assetsLocation="assets/";
 
 function setup(){ 
 	let canvas=createCanvas(500,500);
 	canvas.parent("flex");
-	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //create this object on user gesture, starts with audioContext suspended
+	tapePlayer=new Player(0,0,500,500,fileLocation,assetsLocation);  //created with audioContext suspended
 }
 
 function draw(){
@@ -43,8 +43,7 @@ function keyPressed(){
   	}
 }
 
-var released = true;
-
+var released = true;  //this handling to fix issue with p5 touch start/end
 function mouseReleased(){
 	released = true;
 	return false;
