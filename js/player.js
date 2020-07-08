@@ -58,7 +58,7 @@ class Player{
     	this.spectrum=new Spectrum(this.analyser,posX+width*.05,posY+height*.55,width*.425,height*.225);				//set up our spectrum and waveform viewers
 		this.waveform=new Waveform(this.analyser,posX+width*.525,posY+height*.55,width*.425,height*.225);
 
-		this.spectrum.offscreen._renderer.canvas.mozOpaque=true;
+		//this.spectrum.offscreen._renderer.canvas.mozOpaque=true;
 
 		//some other variables for managing rewinding
     	this.rewinding=false;
