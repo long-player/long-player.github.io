@@ -11,7 +11,7 @@ class Player{
 		this.audio=new Audio();
 		this.audio.crossOrigin = 'anonymous';
 		this.audio.src = audioFileName;
-		this.audio.preload = 'none';  //'auto' is default
+		this.audio.preload = 'auto';  //'auto' is default
 
 		//load other sounds
 		this.clickSound=new Audio(assetsLocation + "click.mp3");
