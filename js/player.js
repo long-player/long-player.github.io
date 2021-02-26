@@ -9,7 +9,7 @@ class Player{
 
 		//load big audio file
 		this.audio=new Audio();
-		this.audio.crossOrigin = 'anonymous';   //default 'anonymous' or "", alt 'use-credentials'
+		this.audio.crossOrigin = "";   //default 'anonymous' or "", alt 'use-credentials'
 		this.audio.src = audioFileName;
 		this.audio.preload = 'auto';  //'auto' is default
 
