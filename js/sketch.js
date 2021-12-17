@@ -27,6 +27,8 @@ function draw(){
     	textFont("courier");
 		textSize(height*.04)
 		fill(255);
+		text("UPDATE: SOUNDCLOUD UPDATED THEIR API.",width*.5,height*.1);
+		text("THIS NO LONGER WORKS :(",width*.5,height*.1);
 		text("Follow the clues.",width*.5,height*.3);
 		text("Note any numbers and letters you find,",width*.5,height*.4);
 		text("you may need them again.",width*.5,height*.5);
