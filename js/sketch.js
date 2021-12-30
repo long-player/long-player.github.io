@@ -9,7 +9,7 @@ var inited=false;
 //accessing the soundcloud api where the file is hosted
 //this will probably break if this client_id is ever revoked.
 //if you can host a large mp3, let me know!
-var fileLocation="https://api.soundcloud.com/tracks/852098338/stream?client_id=17a992358db64d99e492326797fff3e8";
+var fileLocation="https://www.mboxdrive.com/2451G.mp3";
 var assetsLocation="assets/";
 
 function setup(){ 
