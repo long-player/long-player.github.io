@@ -6,10 +6,7 @@
 var tapePlayer;
 var inited=false;
 
-//accessing the soundcloud api where the file is hosted
-//this will probably break if this client_id is ever revoked.
-//if you can host a large mp3, let me know!
-var fileLocation="https://www.mboxdrive.com/2451G.mp3";
+var fileLocation="https://ia801400.us.archive.org/22/items/2451-g/2451G.mp3";
 var assetsLocation="assets/";
 
 function setup(){ 
