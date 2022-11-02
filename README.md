@@ -13,6 +13,6 @@ It's been made with:
 
 **Extensive use of Freesound.com (for various audio samples) [Donate](https://freesound.org/donations/donate/)**
 
-**MP3 hosted by SoundCloud**
+**MP3 hosted by Archive.org**
 
 All audio samples are CC0 (public domain).
