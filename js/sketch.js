@@ -6,7 +6,7 @@
 var tapePlayer;
 var inited=false;
 
-var fileLocation="https://ia804604.us.archive.org/34/items/2451-g/2451G.mp3";
+var fileLocation="https://dn720304.ca.archive.org/0/items/2451-g/2451G.mp3";
 var assetsLocation="assets/";
 
 function setup(){ 
